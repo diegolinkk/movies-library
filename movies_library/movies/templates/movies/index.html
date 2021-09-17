@@ -1,14 +1,6 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'movies/style.css' %}">
-    <title>Movies</title>
-</head>
-<body>
-    <h1>Hello From template Movies</h1>
-</body>
-</html>
+{% extends 'movies/base.html' %}
+{% block content %}
+    <h1>Teste 1234 </h1>
+    <p>Teste 12345</p>
+
+{% endblock %}
