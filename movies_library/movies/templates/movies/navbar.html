@@ -6,8 +6,14 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Movies</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="abaw">
+              Filmes
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li> <a href="{% url 'movies:index' %}" class="dropdown-item">Lista</a> </li>
+              <li> <a href="{% url 'movies:add_movie' %}" class="dropdown-item">Adicionar</a> </li>
+            </ul>
           </li>
         </ul>
       </div>

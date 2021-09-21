@@ -1,6 +1,10 @@
 body {
     padding-top: 80px;
   }
+
+form{
+    margin: auto 2% auto 2%;
+}
   
 /* @media (max-width: 979px){ aqui deveria remover o espaço no responsivo mas só atrapalhou
     body{
