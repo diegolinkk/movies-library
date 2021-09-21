@@ -1,6 +1,25 @@
 {% extends 'movies/base.html' %}
 {% block content %}
-    <h1>Teste 1234 </h1>
-    <p>Teste 12345</p>
+
+<table class="table  table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Data de Publicação</th>
+            <th scope="col">Categoria</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for movie in movies %}
+            <tr>
+                <th scope="row"> {{movie.id}}</th>
+                <td>{{movie.movie_name}}</td>
+                <td>{{movie.publish_date}}</td>
+                <td>{{movie.category}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
 
 {% endblock %}
