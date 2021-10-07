@@ -13,11 +13,9 @@
             </div>
             <div class="mb-3">
                 <select class="form-select" aria-label="Selecionar Categoria" name="category">
-                    <option selected> Escolha a categoria </option>
-                    <option value="1">Categoria 1</option>
-                    <option value="2">Categoria 2</option>
-                    <option value="3">Categoria 3</option>
-                    <option value="4">Categoria 4</option>
+                    {% for category in categories %}
+                        <option value="{{category.id}}">{{category.category_name}}</option>
+                    {% endfor %}
                 </select>
             </div>
             <div>

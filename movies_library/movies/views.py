@@ -23,4 +23,5 @@ def add_movie(request):
         return HttpResponseRedirect(reverse('movies:index'))
 
 
-    return render(request,'movies/adicionar.html')
+    categories = Category.objects.all()
+    return render(request,'movies/adicionar.html', {'categories': categories})
