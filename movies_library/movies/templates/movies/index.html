@@ -1,4 +1,5 @@
 {% extends 'movies/base.html' %}
+{% load static %}
 {% block content %}
 
 <table class="table  table-hover">
@@ -18,10 +19,12 @@
                 <td>{{movie.movie_name}}</td>
                 <td>{{movie.publish_date}}</td>
                 <td>{{movie.category}}</td>
-                <td> <a href="{% url 'movies:delete_movie' movie.id %}" class="btn btn-outline-danger"> teste </a></td>
+                <td> <a href="{% url 'movies:delete_movie' movie.id %}" class="btn btn-outline-danger deletar-filme"> deletar </a></td>
             </tr>
         {% endfor %}
     </tbody>
 </table>
+
+<script src="{% static 'movies/deletar_filme.js' %}"></script>
 
 {% endblock %}
