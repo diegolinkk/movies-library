@@ -8,6 +8,7 @@
             <th scope="col">Nome</th>
             <th scope="col">Data de Publicação</th>
             <th scope="col">Categoria</th>
+            <th scope="col">Deletar</th>
         </tr>
     </thead>
     <tbody>
@@ -17,6 +18,7 @@
                 <td>{{movie.movie_name}}</td>
                 <td>{{movie.publish_date}}</td>
                 <td>{{movie.category}}</td>
+                <td> <a href="{% url 'movies:delete_movie' movie.id %}" class="btn btn-outline-danger"> teste </a></td>
             </tr>
         {% endfor %}
     </tbody>

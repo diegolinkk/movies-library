@@ -1,3 +1,4 @@
+from django.http.response import HttpResponse
 from django.shortcuts import render,HttpResponseRedirect
 from django.urls import reverse
 from .models import Movie,Category
@@ -25,3 +26,9 @@ def add_movie(request):
 
     categories = Category.objects.all()
     return render(request,'movies/adicionar.html', {'categories': categories})
+
+def delete_movie(request,movie_id):
+    movie = Movie.objects.get(pk=movie_id)
+    movie.delete()
+    
+    return HttpResponseRedirect(reverse('movies:index'))
