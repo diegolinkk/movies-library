@@ -6,9 +6,9 @@ Delete Category
 
 
 fazendo:
-Update Movie
 
 feito:
+Update Movie
 Model - Movie
 Model Category
 Adicionar Movie e Category no Admin

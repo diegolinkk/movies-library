@@ -1,0 +1,29 @@
+{% extends 'movies/base.html' %}
+{% block content %}
+
+    <form action="#" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="id" value="{{movie.id}}">
+        <div class="mb-3">
+            <label for="movie_name" class="form-label"> Nome do Filme</label>
+            <input type="text" class="form-control" id="movie_name" name="movie_name" value="{{movie.movie_name}}">
+        </div>
+        <div class="mb-3">
+            <label for="publish_date" class="form-label"> Data de Lançamento</label>
+            <input type="date" class="form-control" name="publish_date" id="publish_date" value="{{data}}">
+        </div>
+        <div class="mb-3">
+            <select class="form-select"  name="category" id="category">
+                {% for category in categories %}
+                    <option value="{{category.id}}" {% if category.id == movie.category.id %} selected {% endif %} >
+                        {{category.category_name}}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <input type="submit" value="enviar">
+        </div>
+    </form>
+
+{% endblock %}

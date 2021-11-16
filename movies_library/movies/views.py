@@ -32,3 +32,26 @@ def delete_movie(request,movie_id):
     movie.delete()
     
     return HttpResponseRedirect(reverse('movies:index'))
+
+def update_movie(request,movie_id):
+
+    #rotina de update caso os dados venham de POST
+    if request.method == 'POST':
+        m = Movie.objects.get(pk=request.POST['id'])
+
+        m.movie_name = request.POST['movie_name']
+        m.publish_date = request.POST['publish_date']
+
+        #atualizando a categoria - uma chave estrangeira
+        c = Category.objects.get(pk=request.POST['category'])
+        m.category = c
+
+        m.save()
+
+        return HttpResponseRedirect(reverse('movies:index'))
+
+    #caso não seja POST, carrega os dados utilizando o movie_id vindo do GET
+    categories = Category.objects.all()
+    movie = Movie.objects.get(pk=movie_id)
+    data = str(movie.publish_date) #tive que converter a data para string
+    return render(request,'movies/update.html',{'movie': movie, 'categories':categories, 'data': data})
