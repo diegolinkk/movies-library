@@ -1,0 +1,21 @@
+pendente:
+Create Category
+Read Category
+Update Category
+Delete Category
+
+
+fazendo:
+Update Movie
+
+feito:
+Model - Movie
+Model Category
+Adicionar Movie e Category no Admin
+Add HTML Basic Routes
+Add Movies template
+Add Static Files
+Add Bootstrap
+Read Movie
+Create Movie
+Delete Movie
