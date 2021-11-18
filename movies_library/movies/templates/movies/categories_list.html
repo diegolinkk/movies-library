@@ -1,0 +1,26 @@
+{% extends 'movies/base.html' %}
+{% block content %}
+
+<a href="#" class="btn btn-primary">Adicionar categoria</a>
+<table class="table  table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col"> Atualizar</th>
+            <th scope="col"> Deletar </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for category in categories %}
+            <tr>
+                <th scope="row"> {{category.id}}</th>
+                <td>{{category.category_name}}</td>
+                <td> <a href="{% url 'movies:update_movie' category.id %}" class="btn btn-outline-primary">atualizar </a></td>
+                <td> <a href="{% url 'movies:delete_movie' category.id %}" class="btn btn-outline-danger deletar-filme"> deletar </a></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

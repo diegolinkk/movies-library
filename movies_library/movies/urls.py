@@ -8,4 +8,5 @@ urlpatterns = [
     path('adicionar/',views.add_movie,name='add_movie'),
     path('delete/<int:movie_id>/',views.delete_movie,name='delete_movie'),
     path('update/<int:movie_id>/', views.update_movie,name='update_movie'),
+    path('list_categories/',views.list_category,name='list_categories'),
 ]

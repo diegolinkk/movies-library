@@ -55,3 +55,8 @@ def update_movie(request,movie_id):
     movie = Movie.objects.get(pk=movie_id)
     data = str(movie.publish_date) #tive que converter a data para string
     return render(request,'movies/update.html',{'movie': movie, 'categories':categories, 'data': data})
+
+
+def list_category(request):
+    categories = Category.objects.all()
+    return render(request,'movies/categories_list.html',{'categories':categories})
